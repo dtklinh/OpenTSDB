@@ -1,0 +1,9 @@
+class services {
+}
+class services::tcollector{
+	service {"tcollector":
+		ensure => stopped,
+		enable => true,
+		require => [File["start_tcollector"], File["$tcollector_home"]],
+	}	
+}
